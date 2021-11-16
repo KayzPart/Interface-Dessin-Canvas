@@ -52,7 +52,8 @@ window.onload = () => {
         el.addEventListener("touchcancel", handleCancel, false);
         el.addEventListener("touchleave", handleLeave, false);
         el.addEventListener("touchmove", handleMove, false);
-      }
+    }
+    startup();
 }
 
 
