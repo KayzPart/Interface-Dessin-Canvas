@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dessin avec Canvas</title>
+        <meta name="description" content="Creer une interface de dessin avec Canvas, à l'aide d'un tuto créer par la chaîne Nouvelle Techno">
+        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <section id="dessin">
+            <canvas id="feuille" width="400" height="400" ></canvas>
+                <div id="palette">
+                    <div data-color ="cornflowerblue"></div>
+                    <div data-color ="rgb(142, 155, 119)"></div>
+                    <div data-color ="wheat"></div>
+                    <div data-color ="sandybrown"></div>
+                    <div data-color ="orange"></div>
+                    <div data-color ="sienna"></div>
+                    <div data-color ="palevioletred"></div>
+                    <div data-color ="firebrick"></div>
+                    <div data-color ="black" ></div>
+                </div>
+                <div id="outils">
+                    <div id="plus" ><i class="las la-plus"></i></div>
+                    <div id="moins"><i class="las la-minus"></i></div>
+                    <div id="gomme"><i class="las la-eraser"></i></div>
+                    <div id="croix"><i class="las la-times"></i></div>
+                    <div id="smile"><i class="lar la-smile"></i></div>
+                    <div id="cercle"><i class="lar la-circle"></i></div>
+                </div>
+                <div id="indications"></div>
+        </section>
+        
+        <script src="./dessin.js"></script>
+        <script src="./app.js"></script>
+    </body>
+</html>
