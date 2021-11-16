@@ -45,15 +45,7 @@ window.onload = () => {
         canvas.strokeCercle();
     })
     
-    function startup() {
-        var el = document.getElementsById("#feuille")[0];
-        el.addEventListener("touchstart", handleStart, false);
-        el.addEventListener("touchend", handleEnd, false);
-        el.addEventListener("touchcancel", handleCancel, false);
-        el.addEventListener("touchleave", handleLeave, false);
-        el.addEventListener("touchmove", handleMove, false);
-    }
-    startup();
+    
 }
 
 

@@ -4,6 +4,7 @@ class Dessin{
         // Il nous faut stocker différentes informations
         // On utilise la propriété draw qui nous permets de détecter si la personne est entrain dessiner
         this.draw = false;
+        
 
         //  Les coordonnées de la zone ou l'on se trouve sur l'action précédente (exemple pour relier les trait)
         // This fait référence à un objet auquel il appartient *
@@ -52,6 +53,30 @@ class Dessin{
                 this.prevY = currY;
             }
         })
+        // ESsaie pour tactile 
+        this.canvas.addEventListener("touchstart", () => {
+            this.draw = true; 
+            this.prevX = (e.clientX - this.canvas.offsetLeft) * 400 / this.canvas.clientWidth;
+            this.prevY = (e.clientY - this.canvas.offsetTop) * 400 / this.canvas.clientHeight;
+        });
+        this.canvas.addEventListener("touchend", () => {
+            this.draw = false;
+        });
+        this.canvas.addEventListener("touchmove", () => {
+            if(this.draw){
+                // Si on dessine on récupère l'emplacement auquel se trouve la souris au moment de la déplacer 
+                let currX = (e.clientX - this.canvas.offsetLeft) * 400 / this.canvas.clientWidth;
+                let currY = (e.clientY - this.canvas.offsetTop) * 400 / this.canvas.clientHeight;
+
+                // Pouvoir dessiner a partir des coordonées
+                this.dessine(this.prevX, this.prevY, currX, currY);
+
+                // On stocke les nouvelles coordonées 
+                this.prevX = currX;
+                this.prevY = currY;
+            }
+        })
+
         // Les évènement qui peuvent nous faire arrêter de dessiner 
         this.canvas.addEventListener("mouseup", () => {
             this.draw = false; 
@@ -60,7 +85,6 @@ class Dessin{
         this.canvas.addEventListener("mouseout", () => {
             this.draw = false; 
         })
-
 
 
     }
