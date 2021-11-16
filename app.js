@@ -46,7 +46,7 @@ window.onload = () => {
     })
     
     function startup() {
-        var el = document.getElementsByTagName("canvas")[0];
+        var el = document.getElementsById("#feuille")[0];
         el.addEventListener("touchstart", handleStart, false);
         el.addEventListener("touchend", handleEnd, false);
         el.addEventListener("touchcancel", handleCancel, false);
